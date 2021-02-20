@@ -86,12 +86,12 @@ public String convert(String str, int numRows) {
    for (int i = 0; i < Math.min(numRows, str.length()); i++) {  // outer for-loop
       for (int j = i; j < str.length(); j += max) {  // inner for-loop
          out[index++]=str.charAt(j);  // assignment statement
-		 if (leap != max && j + leap < str.length()) // if statement
-		    out[index++]=str.charAt(j + leap);
-	 }
-	 leap -= 2;
-	 if (leap < 1) 
-	    leap = max;
+         if (leap != max && j + leap < str.length()) // if statement
+	    out[index++]=str.charAt(j + leap);
+      }
+      leap -= 2;
+      if (leap < 1)
+         leap = max;
    }
    return new String(out);
 }
