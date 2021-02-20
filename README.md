@@ -1,6 +1,6 @@
 # Analysis & Design of An Algorithm – Zigzag Conversion
 
-In this article, we develop the optimum algorithm for the [Zigzag Conversions](https://leetcode.com/problems/zigzag-conversion/) problem and analyze its complexity. We use as little technical terminology as possible in doing so. We develop the algorithm in Java. 
+In this article, we develop the optimum algorithm for the [Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/) problem and analyze its complexity. We use as little technical terminology as possible in doing so. We develop the algorithm in Java. 
 
 The problem is described in full [on Leetcode](https://leetcode.com/problems/zigzag-conversion/). Just to refresh – a zigzag of letters is constructed by lining them up in vertical blocks towards South, and in diagonal blocks towards North-East, repeatedly until all the letters in the input String are used up. The North and South corners of the zigzag are all at the same horizontal levels each, and the height of zigzag, i.e. the number of rows between its North and South ends is part of the input to this problem. 
 
@@ -73,7 +73,7 @@ where _currentRow_ is the index of the row being iterated on. So by this, for ex
 
 # Computational Complexity
 
-Following is the optimum algorithm for [Zigzag Conversions](https://leetcode.com/problems/zigzag-conversion/). This algorithm is `O(N)` where `N` is the length of the input String.
+Following is the optimum algorithm for [Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/). This algorithm is `O(N)` where `N` is the length of the input String.
 
 
 ```php 
@@ -107,4 +107,4 @@ As for the memory complexity – all variables declared except the character arr
 
 Noteworthy also is that the computation time of the algorithm is in `θ(N)` when `numRows>1`. This is the case that the best/extreme cases of input are ruled out and the algorithm never returns _str_ without processing it, for any possible _str_ passed into it in the domain. Same argument applies for the memory complexity of our algorithm. 
 
-`O(N)` is clearly the optimum complexity of both time and memory for this algorithm. The desired output is a re-arrangement of the _N_ letters input and can’t be constructed any faster than `O(N)`. Similarly, the output should be arranged into a new character sequence of length N. In an extremely restricted domain Eg.  "maximum 2 distinct letters in _str_, a repeating sequence as _str_, ...", a faster and/or in-place algorithm can be possible but that’s not the case in [Zigzag Conversions](https://leetcode.com/problems/zigzag-conversion/).  
+`O(N)` is clearly the optimum complexity of both time and memory for this algorithm. The desired output is a re-arrangement of the _N_ letters input and can’t be constructed any faster than `O(N)`. Similarly, the output should be arranged into a new character sequence of length N. In an extremely restricted domain Eg.  "maximum 2 distinct letters in _str_, a repeating sequence as _str_, ...", a faster and/or in-place algorithm can be possible but that’s not the case in [Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/).  
