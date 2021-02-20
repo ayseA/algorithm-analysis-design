@@ -73,7 +73,7 @@ where _currentRow_ is the index of the row being iterated on. So by this, for ex
 
 # Computational Complexity
 
-Following is the optimum algorithm for [Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/). This algorithm is `O(N)` where `N` is the length of the input String.
+Following is the [optimum algorithm](ZigzagConversion.java) for [Zigzag Conversion](https://leetcode.com/problems/zigzag-conversion/). This algorithm is `O(N)` where `N` is the length of the input String.
 
 
 ```php 
