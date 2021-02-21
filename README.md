@@ -14,11 +14,12 @@ The correct output for this problem is `"AIQYBHJPRXZCGKOSWDFLNTVEMU"`.
 
 # Problem Domain and The Algorithm
 
-A matrix or a 2-dimensional array, or even in better terms, a checker-board is the best way to model this problem. Each letter is placed in a cell. While forming the zigzag from the given input, the next letter in sequence goes to the neighboring cell either to the South or to the North-East of the current cell. 
+A matrix or a 2-dimensional array, or even in better terms, a checker-board is the best way to model this problem. Each letter is placed in a cell. While forming the zigzag from the given input, the next letter in sequence goes to the neighboring cell either to the South or to the North-East of the current cell. Table 1 shows the zigzag corresponding to our problem instance. 
 
-The zigzag corresponding to our problem instance is as follows: 
 
 ![](grid.PNG)
+
+Table 1: The zigzag for `str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"` and `numRows = 5`.
 
 The desired output is the concatenation of row entries on the above zigzag:
 
