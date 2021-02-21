@@ -35,7 +35,7 @@ As in any algorithm design, we first analyze the domain structure to put it at u
 
 ![](grid2.PNG)
 
-**Table 2:** The zigzag for `str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"` and `numRows = 5`. Column-letters and link-letters are shown in red and blue fonts respectively. The sequence of letters connecting the consecutive pair B&J is highlighted with yellow and grey. H is the link-letter between B&J consecutive pair. 
+**Table 2:** The zigzag components in our problem instance. Column-letters and link-letters are shown in red and blue fonts respectively. The sequence of letters connecting the consecutive pair B&J is highlighted with yellow and grey. H is the link-letter between B&J consecutive pair. 
 
 ## Column-Letters
 
