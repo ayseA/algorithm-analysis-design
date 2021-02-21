@@ -19,9 +19,9 @@ A matrix or a 2-dimensional array, or even in better terms, a checker-board is t
 
 ![](grid.PNG)
 
-Table 1: The zigzag for `str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"` and `numRows = 5`.
+**Table 1:** The zigzag for `str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"` and `numRows = 5`.
 
-The desired output is the concatenation of row entries on the above zigzag:
+The desired output is the concatenation of row entries on the zigzag:
 
 	AIQY   	 // row 0
 	  + BHJPRXZ	 // row 1
@@ -33,6 +33,10 @@ The desired output is the concatenation of row entries on the above zigzag:
 	
 As in any algorithm design, we first analyze the domain structure to put it at use for the optimum solution. In an effort to do so, first observe that the above zigzag is made up of vertical and diagonal blocks. We’ll name them as _**columns**_ and _**links**_ respectively, and the letters on them as _**column-letters**_ and _**link-letters**_. The corner letters, i.e. the letters where columns and links meet (A, I, E, ...) are column-letters by our definition. Also consider the definition of _**consecutive pairs**_ as two letters appearing on consecutive columns of a row. For example, A&I, B&J, L&T are all consecutive pairs but B&R, B&K, G&O, S&W aren’t. 
 
+![](grid2.PNG)
+
+**Table 2:** The zigzag for `str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"` and `numRows = 5`. Column-letters and link-letters are shown in red and blue fonts respectively. The sequence of letters connecting the consecutive pair B&J is highlighted with yellow and grey. H is the link-letter between B&J consecutive pair. 
+
 ## Column-Letters
 
 Relevant to our analysis is the _**letter-distance**_, i.e., the number of letters visited in between the two members of a given consecutive pair. This distance is fixed for a specific problem instance and is 
@@ -43,8 +47,8 @@ This can be thought of as travelling one full column and one full link, each of 
 
 **Eg:** For the following and any other consecutive pair of our problem, the letter-distance in between the pair members is `2*(5-1)=8` in total. Half of this distance is travelled on column(s) and the other half on the link in between: 
 
-	A&I : 4 down on column and 4 diagonal on link
-	K&S : 2 down on column, 4 diagonal on link and 2 down on column
+	I&Q : 4 down on column and 4 diagonal on link
+	B&J : 3 down on column, 4 diagonal on link and 1 down on column
 
 >> What we define as _letter-distance_ is in fact _hop-distance_ – the number of moves from one letter to the other along the path. The number of letters between a consecutive pair is `2*(numRows-1) – 1`. However, we chose the more relevant term _letter-distance_, abusing its literal meaning.
 
@@ -62,7 +66,7 @@ Part (1) and Part (2) cover respectively the column-letters and link-letters. Pa
 It is fairly straightforward that, apart from the first and last rows, there is exactly one link-letter in between each consecutive pair. 
 The letter-distances of link-letters from the surrounding columns vary by 2 from row to row. This is because, both the vertical and diagonal paths to travel to a link-letter from a surrounding consecutive-pair member increase (or decrease) by 1, making the total change 2. 
 
-In another way of putting it – contradicts by our definition of link-letters, but imagine as the link-letter of A&I, the letter I itself, at 0 distance from itself and 8 from it’s pairing letter A. In the row after, the cell where H sits emerged as the one next to the column where I (now J at “this” row) is. I is neighboring both H and J in the row right above, so in order to get from H to J, one has to visit one additional cell in diagonal direction (link) and another additional cell in vertical direction (column). Similarly, the path from G to K is an extension of the path between H and J of the previous row by 1 additional cell at each end of the path. 
+In another way of putting it – contradicts by our definition of link-letters, but imagine as the link-letter of A&I, the letter I itself, at 0 distance from itself and 8 from it’s pairing letter A. In the row after, the cell where H sits emerged as the one next to the column where I (now J at “this” row) is. I is neighboring both H and J in the row right above, so in order to get from H to J, one has to visit one additional cell in diagonal direction (link) and another additional cell in vertical direction (column). This path is shown in gray background in Table 2. Similarly, the path from G to K is an extension of the path between H and J of the previous row by 1 additional cell at each end of the path. 
 
 Putting it all together, the letter-distance between a column-letter and the link-letter right after it is:
 
